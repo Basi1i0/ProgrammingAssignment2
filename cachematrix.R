@@ -30,11 +30,12 @@ cacheSolve <- function(x, ...)
   
   if(!is.null(inv)) 
   {
+    ##message("cached")
     return(inv)
   }
   
   data <- x$get()
-
+  
   if(det(data))
     inv <- solve(data, ...)
   else
