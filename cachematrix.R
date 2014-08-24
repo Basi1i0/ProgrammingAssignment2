@@ -26,8 +26,9 @@ makeCacheMatrix <- function(x = matrix())
 
 cacheSolve <- function(x, ...) 
 {
-
-if(!is.null(inv)) 
+  inv <- x$getinv()
+  
+  if(!is.null(inv)) 
   {
     return(inv)
   }
