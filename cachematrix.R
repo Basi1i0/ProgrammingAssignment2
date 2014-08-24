@@ -2,9 +2,11 @@
 ## that contains the passed matrix, the inverted matrix and interface 
 ## functions to access them
 
-makeCacheMatrix <- function(x = matrix()) {
+makeCacheMatrix <- function(x = matrix()) 
+{
   inv <- NULL
-  set <- function(y) {
+  set <- function(y) 
+  {
     x <<- y
     inv <<- NULL
   }
@@ -22,15 +24,16 @@ makeCacheMatrix <- function(x = matrix()) {
 ## using previos computation, stored in makeCacheMatrix object 
 ## (if possible)
 
-cacheSolve <- function(x, ...) {
+cacheSolve <- function(x, ...) 
+{
 
-  inv <- x$getinv()
-  if(!is.null(inv)) {
-##    message("getting cached data")
+if(!is.null(inv)) 
+  {
     return(inv)
   }
   
   data <- x$get()
+
   if(det(data))
     inv <- solve(data, ...)
   else
