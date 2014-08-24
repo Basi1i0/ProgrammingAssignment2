@@ -1,7 +1,6 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## makeCacheMatrix function creates a special object (namespace),
+## that contains the passed matrix, the inverted matrix and interface 
+## functions to access them
 
 makeCacheMatrix <- function(x = matrix()) {
   inv <- NULL
@@ -18,10 +17,13 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve function provides an inverse of a matrix object,
+## created with makeCacheMatrix function, either by computing it or
+## using previos computation, stored in makeCacheMatrix object 
+## (if possible)
 
 cacheSolve <- function(x, ...) {
-        ## Return a matrix that is the inverse of 'x'
+
   inv <- x$getinv()
   if(!is.null(inv)) {
 ##    message("getting cached data")
